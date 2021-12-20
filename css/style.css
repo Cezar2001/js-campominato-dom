@@ -1,0 +1,64 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    color: white;
+}
+
+.difficulty-container{
+    display: flex;
+    justify-content: center;
+}
+
+.difficulty > button{
+    margin: 20px 50px;
+    padding: 10px;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-box-1{
+    display: flex;
+    flex-wrap: wrap;
+    width: 800px;
+}
+
+.container-box-2{
+    display: flex;
+    flex-wrap: wrap;
+    width: 720px;
+}
+
+.container-box-3{
+    display: flex;
+    flex-wrap: wrap;
+    width: 560px;
+}
+
+.box{
+    width: 80px;
+    height: 80px;
+    background-color: black;
+    border: 2px white solid;
+    padding: 5px;
+}
+
+.box-blue{
+    background-color: #007fff;
+}
+
+.box-grey{
+    background-color: #333;
+}
+
+.box-red{
+    background-color: red;
+}
