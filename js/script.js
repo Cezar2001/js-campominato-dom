@@ -41,7 +41,7 @@ function createNewBox(container, number, listBombs) {
             this.classList.add('box-blue');
             clicked++;
 
-            if(score === maxCells - 16) {
+            if(score === container - 16) {
                 gameOver(true, clicked, container);
             }
         }
