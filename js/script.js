@@ -27,22 +27,22 @@ function gameOver(win, score) {
 }
 
 function createNewBox(container, number, listBombs) {
+    let clicked = 0;
     const boxCreated = document.createElement('div');
     boxCreated.className = 'box';
     boxCreated.innerHTML = number;
     container.append(boxCreated);
-    let clicked = 0;
 
     boxCreated.addEventListener('click', function() {
         if(listBombs.includes(number)) {
             this.classList.add('box-red');
-            gameOver(false, clicked, container)
+            gameOver(false, clicked)
         } else {
             this.classList.add('box-blue');
             clicked++;
 
-            if(score === container - 16) {
-                gameOver(true, clicked, container);
+            if(clicked === boxCreated - 16) {
+                gameOver(true, clicked);
             }
         }
     });
