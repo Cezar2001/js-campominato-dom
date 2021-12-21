@@ -62,3 +62,22 @@ body{
 .box-red{
     background-color: red;
 }
+
+.game-over {
+    width: 100%;
+    height: 100vh;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    line-height: 100vh;
+}
+
+.winner{
+    background-color: rgba(153, 205, 50, 0.6);
+}
+
+.loser{
+    background-color: rgba(255, 99, 71, 0.6);
+}

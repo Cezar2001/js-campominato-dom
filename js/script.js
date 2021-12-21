@@ -9,18 +9,41 @@ function getRandom (min, max) {
     return Math.round(Math.random() * (max - min)) + min;
 }
 
+function gameOver(win, score) {
+    const modal = document.createElement('div');
+    modal.className = 'game-over';
+    if (win) {
+        modal.classList.add('winner');
+        modal.innerText = 'Hai vinto! ';
+    } else {
+        modal.classList.add('loser');
+        modal.innerText = 'Hai perso! ';
+    }
+
+    modal.innerText += `Il tuo punteggio è: ${score}`;
+
+    const body = document.getElementsByTagName('body')[0];
+    body.append(modal);
+}
+
 function createNewBox(container, number, listBombs) {
     const boxCreated = document.createElement('div');
     boxCreated.className = 'box';
     boxCreated.innerHTML = number;
     container.append(boxCreated);
+    let clicked = 0;
 
     boxCreated.addEventListener('click', function() {
         if(listBombs.includes(number)) {
             this.classList.add('box-red');
-            alert('Hai perso');
+            gameOver(false, clicked, container)
         } else {
             this.classList.add('box-blue');
+            clicked++;
+
+            if(score === maxCells - 16) {
+                gameOver(true, clicked, container);
+            }
         }
     });
 }
